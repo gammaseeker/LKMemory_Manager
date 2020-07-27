@@ -1,4 +1,3 @@
-Joey Jiemjitpolchai 111613728
 # LKmalloc Library
 This is my implementation of the LKmalloc library.
 
