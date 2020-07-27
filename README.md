@@ -66,11 +66,6 @@ Do not worry, lkreport writes the correct values as specififed
 in the HW doc thanks to a few checks done in md_to_string().
 
 ### hash table
-It was not until I was very deep in the homework 
-that the professor said to use a BST... 
-(https://piazza.com/class/k5wqqpth1lm1gz?cid=160) As a result, I had to live
-with my sins. 
-
 The primary data structure used to store all my records is in hash tables.
 The reasoning behind this design decision is that the user is most likely
 making mass calls to lkmalloc/lkfree so we are doing heavy insert/deletion
@@ -100,14 +95,13 @@ data structure to tracking these errors. The indeces have specific meanings:
     * 4 - approx frees (updated when lkfree() called)
 
 ## LKmalloc
-As per the professor's suggestion 
-(https://piazza.com/class/k5wqqpth1lm1gz?cid=137) lkmalloc and lkfree
+lkmalloc and lkfree
 are macros that interally call lkmalloc_internal() and lkfree_internal 
 in order to extract file name, function name, and line number of the caller.
-Some IMPORTANT design decisions influenced by (https://piazza.com/class/k5wqqpth1lm1gz?cid=190): 
+Some IMPORTANT design decisions: 
     * It is the USER'S RESPONSIBILITY to install lkreport_exit() using on_exit(3) or atexit(3)
     * There are two global variables `extern int file_desc; extern int lkreport_flags;` that must be SET BY THE USER if they want to use lkreport_exit()
-    * The library does not prevent the user from creating memory leaks/errors, and proceeds with the action (https://piazza.com/class/k5wqqpth1lm1gz?cid=180)
+    * The library does not prevent the user from creating memory leaks/errors, and proceeds with the action
 
 ### lkmalloc_internal()
 There is a description of the function in `LKmalloc.h`. So I will detail
