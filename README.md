@@ -16,7 +16,7 @@ After compiling you may invoke all functions from the library.
 ## Makefile
 Some notable make targets is `make lib` which generates the lkmalloc.a
 static library that can be linked with a user's program. `make depend` is
-implemented to compile all dependencies as per the HW Doc's request. `make tests`
+implemented to compile all dependencies. `make tests`
 will compile all test drivers and use test scrips to invoke them to check
 if the tests pass or fail. `make clean` will destroy all binary files.
 
@@ -62,8 +62,7 @@ I did not realized I inversed the values until I reached lkreport where the
 values for record type is INTRODUCED FOR THE FIRST TIME.
 At that point, my codebase was too large to refactor for 
 one value as it would risk introducing bugs over something so small. 
-Do not worry, lkreport writes the correct values as specififed 
-in the HW doc thanks to a few checks done in md_to_string().
+Do not worry, lkreport writes the correct values thanks to a few checks done in md_to_string().
 
 ### hash table
 The primary data structure used to store all my records is in hash tables.
